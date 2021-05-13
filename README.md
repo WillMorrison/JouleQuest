@@ -1,11 +1,11 @@
 # JouleQuest
 
-## Setup
+## Developer Setup
+
+This project uses [Bazel](https://bazel.build/), you will need to install it
+to build the project. The following command should build and run a small demo
+to confirm everything is working.
 
 ```shell
-# Install pipenv
-pip install --user pipenv
-
-# Enter the environment for running the game
-python3 -m pipenv shell
+bazel run //:smoketest
 ```
