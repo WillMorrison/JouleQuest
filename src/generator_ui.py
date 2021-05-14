@@ -31,7 +31,7 @@ class GeneratorWindow(pygame_gui.elements.ui_window.UIWindow):
                                     ui_manager,
                                     container=self,
                                     object_id='#toggle_image')
-        
+
 
     def _load_images(self):
         r = runfiles.Create()
@@ -49,7 +49,7 @@ class GeneratorWindow(pygame_gui.elements.ui_window.UIWindow):
                 event.ui_object_id == "#generator_window.#toggle_button" and
                 event.ui_element == self.button):
             handled = True
-            self._generator.toggle_connection()
+            self._generator.toggle_output_connected()
         return handled
 
     def update(self, time_delta):
@@ -58,9 +58,9 @@ class GeneratorWindow(pygame_gui.elements.ui_window.UIWindow):
         self.output_label.set_text(f'Current Output: {self._generator.current_output}')
         self.output_label.update(time_delta)
 
-        self.button.set_text('Connected' if self._generator.connected else 'Disconnected')
+        self.button.set_text('Connected' if self._generator.output_connected else 'Disconnected')
         self.button.update(time_delta)
 
-        self._image.set_image(self._toggle_on_image if self._generator.connected else self._toggle_off_image)
+        self._image.set_image(self._toggle_on_image if self._generator.output_connected else self._toggle_off_image)
         self._image.set_dimensions((64, 64))
         self._image.update(time_delta)
