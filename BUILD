@@ -9,3 +9,13 @@ py_binary(
         requirement("pygame_gui"),
     ],
 )
+
+
+
+py_binary(
+    name = "joule_quest",
+    srcs = ["joule_quest.py"],
+    deps = [
+        "//src:main",
+    ],
+)

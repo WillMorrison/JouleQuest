@@ -13,11 +13,11 @@ class Generator:
 
   @property
   def nameplate_capacity(self):
-    return _MAX_OUTPUT
+    return self._MAX_OUTPUT
 
   @property
   def current_output(self):
-    return _MAX_OUTPUT if self._connected else 0
+    return self._MAX_OUTPUT if self._connected else 0
 
   @property
   def connected(self):
@@ -27,5 +27,4 @@ class Generator:
     self._connected = not self._connected
 
   def tick(self, environment):
-  """Updates internal state every game tick."""
-    pass
+    """Updates internal state every game tick."""
