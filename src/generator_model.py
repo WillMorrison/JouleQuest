@@ -3,8 +3,8 @@
 from src import component
 from src import output_component_mixins
 
-class Generator(output_component_mixins.OutputConnectorMixin,
-                output_component_mixins.OutputterMixin,
+class Generator(output_component_mixins.OutputConnector,
+                output_component_mixins.Outputter,
                 component.Base):
 
   def __init__(self):

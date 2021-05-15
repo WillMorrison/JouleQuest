@@ -46,7 +46,8 @@ py_test(
     srcs = ["component_test.py"],
     deps = [
         ":component",
-    ]
+    ],
+    size = "small",
 )
 
 py_library(
@@ -55,4 +56,14 @@ py_library(
     deps = [
         ":component",
     ]
+)
+
+py_test(
+    name = "output_component_mixins_test",
+    srcs = ["output_component_mixins_test.py"],
+    deps = [
+        ":component",
+        ":output_component_mixins",
+    ],
+    size = "small",
 )
